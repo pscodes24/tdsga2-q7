@@ -1,17 +1,18 @@
-Created README.md
-
-name: Test Action
-
+name: GitHub Actions Demo
 on:
   push:
-    branches:
-      - main
+    branches: [ "master" ]
+  workflow_dispatch:
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
       - name: 22f3000935@ds.study.iitm.ac.in
-        run: echo "Hello, world! This step includes the required email address."
+        run: echo "Hello World!"
+      
+      - uses: actions/checkout@v3
+      
+      - name: List files
+        run: ls -la
+
